@@ -20,7 +20,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.ui.summary_btn.clicked.connect(self.show_summary)
         self.ui.clear_btn.clicked.connect(self.clear_fields)
 
-    def create_file(self) -> None:
+    def create_file(self) -> None: #ai recommended this section to make my code clearer
         """Ensures the CSV file exists with a header row
         :return: None
         """
@@ -82,7 +82,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.clear_inputs_only() #i used google to find how to change my message color
 
     def show_summary(self) -> None:
-        """Calculates and displays total and category-based expenses
+        """Calculates and displays total and category expenses
         :return: None
         """
         totals = {
@@ -101,7 +101,7 @@ class Logic(QMainWindow, Ui_MainWindow):
                 reader = csv.reader(file)
                 next(reader, None)
 
-                for row in reader:#i had ai help me  when i was stuck with this loop
+                for row in reader:
                     try:
                         amount = float(row[1])
                         category = row[2]
